@@ -13,9 +13,10 @@
           </v-list-tile>
         </v-list>
       </v-toolbar>
-      <v-list class="pt-0" dense>
+
+      <v-list class="pt-0">
         <v-divider></v-divider>
-        <v-list-tile v-for="item in items" :key="item.title" @click="">
+        <v-list-tile v-for="item in items" :key="item.title" exact :to="{ name: item.route }">
           <v-list-tile-action>
             <v-icon>{{ item.icon }}</v-icon>
           </v-list-tile-action>
@@ -50,9 +51,10 @@
   export default {
     data() {
       return {
-        drawer: false,
+        drawer: true,
         items: [
-          { title: 'FAQ', icon: 'question_answer' }
+          { title: 'Home', icon: 'home', route: 'Landing' },
+          { title: 'About', icon: 'question_answer', route: 'About' }
         ],
         title: "Greg's Best Idea Ever"
       };
