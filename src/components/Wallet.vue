@@ -1,14 +1,14 @@
 <template lang="pug">
-  .about
+  .wallet
     h2 {{ msg }}
 </template>
 
 <script>
   export default {
-    name: 'About',
+    name: 'Wallet',
     data() {
       return {
-        msg: 'About page'
+        msg: 'Wallet page'
       };
     }
   };

@@ -1,9 +1,9 @@
 <template>
   <v-app light>
-    <v-navigation-drawer persistent clipped v-model="drawer" enable-resize-watcher>
+    <v-navigation-drawer temporary v-model="drawer" overflow absolute>
       <v-toolbar flat class="transparent">
         <v-list class="pa-0">
-          <v-list-tile avatar>
+          <v-list-tile avatar exact :to="{ name: 'Profile' }">
             <v-list-tile-avatar>
               <img src="https://randomuser.me/api/portraits/men/85.jpg" />
             </v-list-tile-avatar>
@@ -18,7 +18,7 @@
         <v-divider></v-divider>
         <v-list-tile v-for="item in items" :key="item.title" exact :to="{ name: item.route }">
           <v-list-tile-action>
-            <v-icon>{{ item.icon }}</v-icon>
+            <v-icon medium>{{ item.icon }}</v-icon>
           </v-list-tile-action>
           <v-list-tile-content>
             <v-list-tile-title>{{ item.title }}</v-list-tile-title>
@@ -54,7 +54,9 @@
         drawer: true,
         items: [
           { title: 'Home', icon: 'home', route: 'Landing' },
-          { title: 'About', icon: 'question_answer', route: 'About' }
+          { title: 'Feed', icon: 'question_answer', route: 'Feed' },
+          { title: 'Arena', icon: 'games', route: 'Arena' },
+          { title: 'Wallet', icon: 'monetization_on', route: 'Wallet' }
         ],
         title: "Greg's Best Idea Ever"
       };
