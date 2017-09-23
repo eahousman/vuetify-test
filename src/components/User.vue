@@ -1,14 +1,14 @@
 <template lang="pug">
-  .profile
+  .user
     h2 {{ msg }}
 </template>
 
 <script>
   export default {
-    name: 'profile',
+    name: 'user',
     data() {
       return {
-        msg: 'Profile page'
+        msg: 'User page'
       };
     }
   };

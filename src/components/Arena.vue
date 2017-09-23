@@ -3,7 +3,7 @@
     h2 {{ msg }}
 
     v-container(fluid grid-list-lg)
-      v-layout(row wrap)
+      v-layout(row wrap v-for="item in [1,2,3,4]")
         v-flex(xs12)
           v-card.blue-grey.darken-2.white--text
             v-container(fluid grid-list-md)

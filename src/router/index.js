@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 import Landing from '@/components/Landing';
-import Profile from '@/components/Profile';
+import User from '@/components/User';
 import Feed from '@/components/Feed';
 import Arena from '@/components/Arena';
 import Wallet from '@/components/Wallet';
@@ -15,9 +15,9 @@ export default new Router({
       name: 'Landing',
       component: Landing
     }, {
-      path: '/profile',
-      name: 'Profile',
-      component: Profile
+      path: '/user',
+      name: 'User',
+      component: User
     }, {
       path: '/feed',
       name: 'Feed',

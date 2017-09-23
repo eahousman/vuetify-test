@@ -1,9 +1,9 @@
 <template lang="pug">
   v-app(light)
-    v-navigation-drawer(temporary v-model="drawer" overflow absolute)
+    v-navigation-drawer(temporary v-model="drawer")
       v-toolbar.transparent(flat)
         v-list.pa-0
-          v-list-tile(avatar, exact, :to="{ name: 'Profile' }")
+          v-list-tile(avatar, exact, :to="{ name: 'User' }")
             v-list-tile-avatar
               img(src="https://randomuser.me/api/portraits/men/85.jpg")
             v-list-tile-content
@@ -22,9 +22,8 @@
       v-toolbar-title(v-text="title")
 
     main
-      v-container(fluid)
-        v-slide-y-transition(mode="out-in")
-          router-view
+      v-slide-y-transition(mode="out-in")
+        router-view
 
     v-footer(fixed)
       v-spacer
