@@ -1,6 +1,7 @@
 <template lang="pug">
   .landing
-    h2 {{ msg }}
+    v-toolbar.primary(flat dark)
+      v-toolbar-title(scroll-off-screen) {{pageTitle}}
 </template>
 
 <script>
@@ -8,7 +9,7 @@ export default {
   name: 'landing',
   data() {
     return {
-      msg: 'Landing page'
+      pageTitle: 'Landing'
     };
   }
 };

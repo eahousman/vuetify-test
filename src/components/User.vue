@@ -1,5 +1,8 @@
 <template lang="pug">
   .user
+    v-toolbar.primary(flat dark)
+      v-toolbar-title(scroll-off-screen) {{pageTitle}}
+
     v-container
       v-form(v-model="valid" ref="form")
         v-text-field(label="Name" v-model="name" required :rules="nameRules", :counter="10")
@@ -16,6 +19,7 @@
     name: 'user',
     data() {
       return {
+        pageTitle: 'Profile',
         name: 'Frink',
         nameRules: [
           (v) => !!v || 'Name is required',

@@ -1,6 +1,7 @@
 <template lang="pug">
   .arena
-    h2 {{ msg }}
+    v-toolbar.primary(flat dark)
+      v-toolbar-title(scroll-off-screen) {{pageTitle}}
 
     v-container(fluid grid-list-lg)
       v-layout(row wrap v-for="item in [1,2,3,4]")
@@ -34,7 +35,7 @@
 
     v-container(fluid)
       .text-xs-center
-        v-pagination(:length="6", v-model="currentPage")
+        v-pagination(:length="6", v-model="currentPage").mb-5
 </template>
 
 <script>
@@ -42,7 +43,7 @@
     name: 'Arena',
     data() {
       return {
-        msg: 'Arena page',
+        pageTitle: 'Arena',
         currentPage: 1
       };
     }

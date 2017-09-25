@@ -3,7 +3,7 @@
     v-navigation-drawer(temporary v-model="drawer")
       v-toolbar.transparent(flat)
         v-list.pa-0
-          v-list-tile(avatar, exact, :to="{ name: 'User' }")
+          v-list-tile(avatar exact, :to="{ name: 'User' }")
             v-list-tile-avatar
               img(src="https://randomuser.me/api/portraits/men/85.jpg")
             v-list-tile-content
@@ -34,7 +34,7 @@
   export default {
     data() {
       return {
-        drawer: true,
+        drawer: false,
         items: [
           { title: 'Home', icon: 'home', route: 'Landing' },
           { title: 'Feed', icon: 'question_answer', route: 'Feed' },

@@ -1,6 +1,7 @@
 <template lang="pug">
   .wallet
-    h2 {{ msg }}
+    v-toolbar.primary(flat dark)
+      v-toolbar-title(scroll-off-screen) {{pageTitle}}
 </template>
 
 <script>
@@ -8,7 +9,7 @@
     name: 'Wallet',
     data() {
       return {
-        msg: 'Wallet page'
+        pageTitle: 'Wallet'
       };
     }
   };

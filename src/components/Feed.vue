@@ -1,6 +1,7 @@
 <template lang="pug">
   .feed
-    h2 {{ msg }}
+    v-toolbar.primary(flat dark)
+      v-toolbar-title(scroll-off-screen) {{pageTitle}}
 </template>
 
 <script>
@@ -8,7 +9,7 @@
     name: 'Feed',
     data() {
       return {
-        msg: 'Feed page'
+        pageTitle: 'Feed'
       };
     }
   };
