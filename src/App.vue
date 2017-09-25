@@ -19,7 +19,7 @@
 
     v-toolbar(fixed)
       v-toolbar-side-icon(light @click.stop="drawer = !drawer")
-      v-toolbar-title(v-text="title")
+      router-link.toolbar__title(tag="span", :to="{ name: 'Landing' }", style="cursor: pointer;") {{title}}
 
     main
       v-slide-y-transition(mode="out-in")
@@ -41,7 +41,7 @@
           { title: 'Arena', icon: 'games', route: 'Arena' },
           { title: 'Wallet', icon: 'monetization_on', route: 'Wallet' }
         ],
-        title: "Greg's Best Idea Ever"
+        title: 'App Name'
       };
     }
   };
