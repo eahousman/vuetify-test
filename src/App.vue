@@ -1,25 +1,26 @@
 <template lang="pug">
   v-app(light)
-    v-navigation-drawer(temporary v-model="drawer")
-      v-toolbar.transparent(flat)
-        v-list.pa-0
-          v-list-tile(avatar exact, :to="{ name: 'User' }")
-            v-list-tile-avatar
-              img(src="https://randomuser.me/api/portraits/men/85.jpg")
-            v-list-tile-content
-              v-list-tile-title John Doe
-
+    v-navigation-drawer(permanent clipped :mini-variant="mini")
       v-list.pt-0
-        v-divider
         v-list-tile(exact, v-for="item in items", :key="item.title", :to="{ name: item.route }")
           v-list-tile-action
             v-icon(medium) {{ item.icon }}
           v-list-tile-content
             v-list-tile-title {{ item.title }}
+        v-list-tile(@click="mini = !mini")
+          v-list-tile-action
+            v-icon(medium) {{ mini ? 'chevron_right' : 'chevron_left' }}
+          v-list-tile-content
+            v-list-tile-title Collapse
+
 
     v-toolbar(fixed)
-      v-toolbar-side-icon(light @click.stop="drawer = !drawer")
-      router-link.toolbar__title(tag="span", :to="{ name: 'Landing' }", style="cursor: pointer;") {{title}}
+      v-toolbar-title {{title}}
+      v-spacer
+      router-link(tag="div", :to="{ name: 'User' }" style="cursor: pointer;")
+        v-avatar
+          img(src="https://randomuser.me/api/portraits/men/85.jpg")
+        | John Doe
 
     main
       v-slide-y-transition(mode="out-in")
@@ -34,7 +35,7 @@
   export default {
     data() {
       return {
-        drawer: false,
+        mini: false,
         items: [
           { title: 'Home', icon: 'home', route: 'Landing' },
           { title: 'Feed', icon: 'question_answer', route: 'Feed' },
